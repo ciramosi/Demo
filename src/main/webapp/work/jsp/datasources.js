@@ -578,6 +578,114 @@ eng.dataSources["ItemOrder"] = {
 };
 
 
+eng.dataSources["SaleRemission"] = {
+    scls: "SaleRemission",
+    modelid: "SWBF2",
+    dataStore: "mongodb",    
+    displayField: "folio",
+    fields: [
+        {name: "folio", title: "Folio", canEdit:false, required: false, type: "string"},
+        {name: "dateSale", title: "Fecha", type: "date"},
+        {name: "client", title: "Cliente", type: "string", defaultValue:"Público General"},
+        {
+        	name: "itemSale", title: "Productos", stype: "grid", 
+            showGridSummary:true,
+            dataSource:"ItemSale"
+        },        
+        {name: "subtotal", title: "Subtotal", type: "float", format:"$,##0.00"},
+        {name: "iva", title: "Total IVA", format:"$,##0.00", type: "float",
+            formula: { text: "total-subtotal" },
+            validators_:[{
+                type:"serverCustom",                                    //serverCustom del lado del servidor
+                serverCondition:function(name,value,request){                    
+                    return value>=0;
+                },
+                errorMessage:"Error. El iva no puede tener un valor negativo."
+            }]            
+        },
+        {name: "total", title: "Total", format:"$,##0.00", type: "float"},
+    ]
+};
+
+eng.dataSources["ItemSale"] = {
+    scls: "ItemSale",
+    modelid: "SWBF2",
+    dataStore: "mongodb",    
+    displayField: "producto",
+    fields: [
+        {name: "producto", title: "Producto", 
+            required: true, 
+            stype: "select", 
+            dataSource:"Productos",
+            changed:function(form,item,value){
+                //console.log(form,item,value);
+                var record=item.getSelectedRecord(); 
+                //console.log(record); 
+                if(record) 
+                {
+                    form.setValue('precio', record.precio);
+                    form.setValue('iva', record.iva);
+                    form.setValue('cantidad', 1);
+                    form.focusInItem("cantidad");
+                }
+            }
+        },
+        {name: "cantidad", title: "Cantidad", type: "int"},
+        {name: "precio", title: "Precio", showGridSummary:false, type: "float"},
+        {name: "subtotal", title: "Subtotal", canEdit:false, 
+            type: "float", 
+            format:"$,##0.00", 
+            formula: { text: "precio*cantidad" },
+            getGridSummary:function (records, summaryField) {
+                var ret=0;
+                //for (var i = 0; i < records.length; i++) {
+                //    ret+=records[i].subtotal;
+                //}
+                if(form)
+                {
+                    var g=form.getField("productos").grid;
+                    var i=0;
+                    var d=g.getEditedRecord(i).subtotal;                    
+                    while(d!==undefined)
+                    {              
+                        ret+=d;
+                        i++;
+                        d=g.getEditedRecord(i).subtotal;
+                    }                                        
+                    form.setValue("subtotal",ret);
+                }
+                return ret;
+            },             
+        },
+        {name: "iva", title: "IVA", showGridSummary:false, 
+            canEdit:false, 
+            type: "float", 
+            format:"$,##0.00", 
+        },
+        {name: "total", title: "Total", canEdit:false, type: "float", 
+            format:"$,##0.00", 
+            formula: { text: "(iva*precio*cantidad)+precio*cantidad" },
+            getGridSummary:function (records, summaryField) {
+                var ret=0;
+                if(form)
+                {
+                    var g=form.getField("productos").grid;
+                    var i=0;
+                    var d=g.getEditedRecord(i).total;                    
+                    while(d!==undefined)
+                    {              
+                        ret+=d;
+                        i++;
+                        d=g.getEditedRecord(i).total;
+                    }                                        
+                    form.setValue("total",ret);
+                }
+                return ret;
+            },             
+        },
+    ]
+};
+
 
 
 
