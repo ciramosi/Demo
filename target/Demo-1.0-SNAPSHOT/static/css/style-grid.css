@@ -1,0 +1,552 @@
+html, body {
+    height: 100%;
+    font-size: 16px;
+    font-family:Verdana, Geneva, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.login-back { 
+  background: url(/static/img/back-login.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.login-box {
+    width: auto;
+    max-width: 770px;
+    background: rgba(255,255,255,0.8);
+    margin-top: 5%;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.padding-sides-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+@media screen and (max-width: 768px) {
+    .padding-sides-30 {
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+}
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+.padding-20 {
+    padding: 20px;
+}
+
+.top-border, .bottom-border {
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+.login-box .input-group {
+    float: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#btn_sesion {
+    box-sizing: border-box;
+    width: 35%;
+    min-width: 250px;
+    padding: 10px 0;
+    border-radius: 20px;
+    border:2px solid #333333;
+    background:none;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    color:#323232;
+}
+
+#btn_sesion:hover {
+    background-color: rgba(0,0,0,.3);
+    border:2px solid rgba(0,0,0,.0);
+    color:white;
+    text-decoration: none;
+}
+
+.ver {
+    width: 20px;
+    height: 20px;
+    background-image: url(/static/img/view-icon.png);
+}
+
+.ver:hover {
+    background-image: url(/static/img/view-icon-hover.png);
+}
+
+#user-icon, #pass-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+}
+
+#label_user,#label_pass {
+    padding: 10px 0 0 0;
+    margin: 0; 
+    line-height: 0px;
+}
+
+/* menu horizontal*/
+
+.encabezado{
+    width:100%;
+    height: 80px;
+    background-color:#000;
+    float: left;
+    }
+
+.logo01 {
+	float: left;
+	margin: 10px 0 0 20px;
+        width: 175px;
+	padding-top: 10px;
+	height: 65px;
+	/*background-color:;*/
+	text-align: center;
+}
+
+.logo02 {
+    display:block;
+	margin: 10px auto;
+	width: 175px;
+	padding-top: 10px;
+	height: 65px;
+	/*background-color:;*/
+	text-align: center;
+}
+
+ 
+.hmenu {
+    position: absolute; 
+    top: 25px;
+    width: 330px;
+    height:45px;
+}
+.encabezado .col-xs-4 img {
+    margin-top: 10px;
+}
+.hmenu ul{
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hmenu li{
+	float:left;
+	border-right: 1px solid #fff;
+
+}
+li:nth-child(3) {
+    border-right: 0 none !important;
+}
+.hmenu li sinbor{
+	float:left;
+	border-right:0px solid #fff;
+
+}
+
+.hmenu li a{
+    display:block;
+    color:#fff;
+    text-align:center;
+    padding:10px 25px 10px 14px;
+    text-decoration: none;
+    font-family: verdana, Geneva, sans-serif;
+    transition: .5s;
+}
+
+
+#salir {
+	background-image: url(/static/img/salirnormal.png);
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	margin: 8px 16px;
+}
+.hmenu li a:hover{
+    text-decoration: underline;
+}
+
+#salir:hover {
+	background-image: url(/static/img/salirhover.png);
+
+}
+
+/*Menú Vertical*/
+
+
+.menuV {
+	list-style: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 20%;
+	min-width: 200px;
+    background-color: #F3F3F3;
+    border: 0.1px solid #e1e1e1;
+    width: 280px;
+}
+
+#btn01 {
+	padding-top: 10px;
+}
+
+.btnlvl01 {
+	background-color: #F3F3F3;
+	padding: 10px 10px 10px 20px;
+	color: #000;
+	font-family: 'verdana';
+	text-align: left;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.btnlvl01:hover {
+	background-color:#E6E6E6;
+}
+
+#submenu01, #submenu02 {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 0;
+	text-decoration: none;
+	height: 0;
+	overflow: hidden;
+}
+
+#submenu01 li a, #submenu02 li a {
+	text-decoration: none;
+	padding: 10px 0 10px 25px;
+	display: block;
+	color: #000;
+}
+
+#submenu01 li a:hover, #submenu02 li a:hover {
+	background-color:#F3F3F3;
+
+}
+
+.flecha {
+	display: inline-block;
+	padding-right: 10px;
+	padding-top: 2px;
+	float: right;
+}
+
+/*box-busqueda*/
+
+.flex-container {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    width:80%;
+    float: left;
+    height: 72px;
+
+}
+@media screen and (max-width: 1399px) {
+    .flex-container {
+    width:70%;
+}
+}
+
+/*01 busqueda, 02 imprimir, 03 basura*/
+.flex-item01 {
+    /*background-color:;*/
+    width: 10%;
+    height: 70px;
+    float: left;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 15px;
+    max-width: 50px;
+  
+
+}
+
+
+
+#input_busqueda {
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	width: 60%;
+	padding-top: 17px;
+}
+
+#input_busqueda input {
+	max-width: 450px;
+	min-width: 200px;
+	padding: 5px;
+	width: 50%;
+	float: left;
+	font-family: 'verdana';
+	font-size: 15px;
+	border:none;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #848484;
+  font-weight: bold;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #848484;
+  font-weight: bold;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #848484;
+  font-weight: bold;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #848484;
+  font-weight: bold;
+}
+
+.flex-item02{
+    /*background-color:;*/
+    border-right: #E1E1E1 2px solid;
+    width: 10%;
+    height: 40px;
+    text-align:center;
+    margin-top:15px;
+    float: left;
+
+
+
+    
+}
+.flex-item03 {
+    /*background-color:;*/
+    margin-right:0;
+    width: 10%;
+    height: 40px;
+    text-align: center;
+    margin-top: 15px;
+    float: left;
+ 
+}
+
+.flex-item01 > a, .flex-item02 > a, .flex-item03 > a {
+    text-decoration: none !important;
+
+}
+
+.icon-BASURA:before {
+  content: "\e900";
+  font-size: 30px;
+  color:#333333;
+     
+}
+.btn_sub {
+    text-decoration: none!important;
+
+      
+}
+.icon-Busqueda:before {
+  content: "\e901";
+  font-size: 40px;
+  color:#333333;
+    
+}
+
+.icon-Imprimir:before {
+  content: "\e906";
+  font-size: 30px;
+  color:#333333;    
+}
+
+/* Iconos de box-Contenedor-idCs*/
+
+.boxidC {
+    float: left;
+    width: 80%;
+    padding-left: 75px;
+    padding-top: 29px;
+}
+@media screen and (max-width: 1399px) {
+    .boxidC {
+    width: 70%;
+}
+}
+.idC{
+    background-color:#FCFCFC;
+    margin-top: 10px;
+    min-width: 600px;
+    max-width: 770px;
+    height: 70px;
+    border: 2px solid #00AABB;
+    clear: both;
+    cursor: pointer;
+}
+
+.idC:hover {
+	/*border:2px solid #;*/
+	background-color: #E6E6E6;
+}
+
+.tablas_de_datos {
+	font-family: 'verdana';
+	text-align: left;
+	font-size: 14px;
+}
+
+.th {
+	font-weight: bold;
+	color: #525252;
+}
+.ml10 {
+    margin-left: 10%;
+}
+.grey-background {
+    height: 170px;
+    border-bottom: .1px solid #E1E1E1;
+}
+
+
+#isc_Utable input {
+    height: 20px!important;
+}
+#isc_Utable #isc_18 {
+    height: 18px!important;
+}
+
+
+.selectItemLiteText {
+    height: 20px!important;
+}
+input {
+    height: 22px!important;
+}
+
+.active {
+    background-color:#089fb0!important;
+    color: #fff!important;
+}
+
+.btn-breadcrumb a.btn.btn-default,.btn-default.active {
+    font-size: 10px!important;
+}
+
+
+
+/* 
+    Created on : 24/11/2015, 04:47:13 PM
+    Author     : carlos.ramos
+*/
+/*.boxedGridCellBasic,
+.boxedGridCellBasicDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; 
+    font-size:11px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; 
+    border-right:1px solid #a0a0a0;
+    background-color:#ffffff;
+}*/
+.boxedGridCellBasicOver,
+.boxedGridCellBasicOverDark {
+    /*font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;*/
+    background-color:#b2d577;
+}
+/*.boxedGridCellBasicSelected,
+.boxedGridCellBasicSelectedDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+    color:white;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#000080;
+}*/
+/*.boxedGridCellBasicSelectedOver,
+.boxedGridCellBasicSelectedOverDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+    color:white;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#8080ff;
+}*/
+/*.boxedGridCellBasicDisabled,
+.boxedGridCellBasicDisabledDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+    color:#808080;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#ffffff;
+}*/
+.boxedGridCellCyan {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:black;
+    border-bottom:1px solid #ffffff;
+    border-top:1px solid #ffffff;
+    background-color:#ffffff;
+}
+.boxedGridCellCyanDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:black;
+    border-bottom:1px solid #f1f7e6;
+    border-top:1px solid #f1f7e6;
+    background-color:#f1f7e6;
+}
+.boxedGridCellCyanOver,
+.boxedGridCellCyanOverDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:black;
+    border-bottom:1px solid #c0c0c0;
+    border-top:1px solid #c0c0c0;
+    background-color:#b2d577;
+}
+.boxedGridCellCyanSelected,
+.boxedGridCellCyanSelectedDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:black;
+    border-bottom:1px solid #f9e8f2;
+    border-top:1px solid #f9e8f2;
+    background-color:#f9e8f2;
+}
+.boxedGridCellCyanSelectedOver,
+.boxedGridCellCyanSelectedOverDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0;
+    border-top:1px solid #a0a0a0;
+    background-color:#ec64ac; 
+}
+.boxedGridCellCyanDisabled {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:#808080;
+    border-bottom:1px solid #ffffff;
+    border-top:1px solid #ffffff;
+    background-color:#ffffff;
+}
+.boxedGridCellCyanDisabledDark {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif;
+    font-size:12px;
+    color:#808080;
+    border-bottom:1px solid #f1f7e6;
+    border-top:1px solid #f1f7e6;
+    background-color:#f1f7e6;
+}
